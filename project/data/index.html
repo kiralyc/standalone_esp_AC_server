@@ -1,0 +1,77 @@
+<!-- Complete project details: https://github.com/kiralyc/standalone_esp_AC_server -->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>AC DASHBOARD</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+    <div class="topnav">
+        <h1>AC</h1>
+    </div>
+    <div class="content">
+        <div class="card-grid">
+            <div class="card">
+              <p class="card-title">Thermometer</p>
+              <p><i class="fas fa-thermometer-half"     style="color:#059e8a;">
+              <span id="temperature"></span> &deg;C</i></p>
+              <p><i class="fas fa-tint"     style="color:#059e8a;">
+              <span id="humidity"></span> &percnt;</i></p>
+              <p><i class="fas fa-battery-full"     style="color:#059e8a;">
+              <span id="batterylevel"></span> &percnt;</i></p>
+              <p style="color:#059e8a;"><i class="fas fa-lightning"     style="color:#FFD65C;"></i>
+              <span id="batteryvoltage"></span> V</p>
+            </div>
+            <div class="card">
+              <p class="card-title">AC</p>
+              <p class="switch">
+                <input type="range" onchange="updateOnchange(this)" id="slider1" min="10" max="40" step="1" value ="22" class="slider"/>
+              </p>
+              <p class="state">Temperature: <span id="sliderValue1"></span> &deg;C</p>
+              <span class="state" style="color:#059e8a;">Fan Mode:</span>
+              <input type="radio" name="fan" onclick="updateOnchange(this)" id="fan1" value="1" >
+                <p class="fas" style="color:#059e8a;font-size:1rem;">|</p>
+              </input>
+              <input type="radio" name="fan" onclick="updateOnchange(this)" id="fan2" value="2">
+                <p class="fas" style="color:#059e8a;font-size:1rem;">||</p>
+              </input>
+              <input type="radio" name="fan" onclick="updateOnchange(this)" id="fan3" value="3">
+                <p class="fas" style="color:#059e8a;font-size:1rem;">|||</p>
+              </input>
+              <input type="radio" checked="checked" id="fan4" name="fan" onclick="updateOnchange(this)" value="0">
+                <p class="fas" style="color:#059e8a;font-size:1rem;">Auto</p>
+              </input>
+              </br>
+              <span class="state" style="color:#059e8a;">AC Mode:</span>
+              <input type="radio" checked="checked" name="ac" onclick="updateOnchange(this)" id="ac1" value="3" >
+                <p class="fas" style="color:#059e8a;font-size:1rem;">Cool</p>
+              </input>
+              <input type="radio" name="ac" id="ac2" onclick="updateOnchange(this)" value="2">
+                <p class="fas" style="color:#059e8a;font-size:1rem;">Heat</p>
+              </input>
+              <input type="radio" name="ac" id="ac3" onclick="updateOnchange(this)" value="4">
+                <p class="fas" style="color:#059e8a;font-size:1rem;">Dry</p>
+              </input>
+              <input type="radio" name="ac" id="ac4" onclick="updateOnchange(this)" value="1">
+                <p class="fas" style="color:#059e8a;font-size:1rem;">Auto</p>
+              </input>
+              <input type="radio" name="ac"  id="ac5" onclick="updateOnchange(this)" value="5">
+                <p class="fas" style="color:#059e8a;font-size:1rem;">Fan</p>
+              </input>
+              </br>
+              <span class="state" style="color:#059e8a;">Power:</span>
+              <input type="radio" name="power" id="power1" onclick="updateOnchange(this)" value="1" >
+                <p class="fas" style="color:#059e8a;font-size:1rem;">On</p>
+              </input>
+              <input type="radio" checked="checked" name="power" onclick="updateOnchange(this)" id="power2" value="0">
+                <p class="fas" style="color:#059e8a;font-size:1rem;">Off</p>
+              </input>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
