@@ -10,7 +10,7 @@ I have used the onboard RGB led from M5 Atom but it is just some basic feedback 
 
 The device is surprisingly responsive thanks for the websocket functionality and the static content which comes from the SPIFF. (if you want to try this code do not forget the upload the static content from data directory to esp via Filesystem Uploader Plugin and setup a portforward in your router if using from internet via duckdns)
 
-I using MideaHeatpumpIR library from heatpumpir because I have a midea AC but you can change change it to any supported lib which you can find in heatpumpir.
+I using MideaHeatpumpIR library from heatpumpir because I have a midea AC but you can change it to any supported lib which you can find in heatpumpir.
 
 I use this server in a custom port behind my firewall (if you want to change the standard 80 port to a custom one then do not forget to put it in the gateway variable in front of the script.js ) 
 I think it would be better on https protocol, but I can not solve this issue with my limited skills and time (currently the ESPAsyncWebServer lib does not support https with esp32 and I have no time to rewrite it).
